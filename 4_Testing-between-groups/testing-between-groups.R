@@ -13,18 +13,18 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 if(!require(here)) install.packages('here') #checks if a package is installed and installs it if required.
 if(!require(tidyverse)) install.packages('tidyverse')
 
-## Activity - load packages using `library()`
+## Activity - load packages using `library()` (Section 4.1)
 
 
 ###############################################################################
-## Activity - formulate a hypothesis
+## Activity - Formulate your research question (Section 4.2)
 ## Write a comment here about what differences you expect there to be between 
 ## urban and rural participants in terms of their social media likes and followers
 #
 #
 
 ###############################################################################
-## Activity - Load in data and check it
+## Activity - Load in data and check it (Section 4.3)
 
 
 
@@ -34,7 +34,7 @@ head(social_media, ??)
 
 
 ###############################################################################
-## Activity - Creating a new likes variable
+## Activity - Creating a new likes variable (Section 4.4)
 
 ## calculate what values you should get for the first three rows of the dataframe, 
 ## when you average bad_mood_likes and good_mood_likes. Write the answers here
@@ -56,7 +56,7 @@ social_media %>%
 head()
 
 ###############################################################################
-## Activity - defining factors
+## Activity - Defining factors (Section 4.5)
 
 # complete the below line of code and run it to get info about the 
 # social_media_likes data frame
@@ -67,7 +67,7 @@ social_media_likes <- social_media_likes %>%
   mutate(urban = factor(urban, levels=c(1,2), labels=c('urban', 'rural'))) #changes the urban variable to a factor with levels urban and rural
 
 #############################################################################
-## Activity - Adapting our previous code to make new histograms
+## Activity - Adapting our previous code to make new histograms (Section 4.6)
 
 # change this code so that it creates a histogram of the likes variable
 social_media_NA %>%
@@ -82,7 +82,7 @@ social_media_NA %>%
 
 
 ###############################################################################
-## Activity - Adapt the code to get the mean and standard deviations for likes and followers
+## Activity - Adapt the code to get the mean and standard deviations for likes and followers (Section 4.7)
 
 social_media_descriptives <- social_media_likes %>% # save to new object called social_media_descriptives
   group_by(???) %>% # group the data by urban
@@ -96,7 +96,7 @@ social_media_descriptives <- social_media_likes %>% # save to new object called 
 social_media_descriptives # view the new dataframe object
 
 ###############################################################################
-## Activity - Performing independent samples t-tests
+## Activity - Performing independent samples t-tests (Section 4.8)
 
 t.test(likes~urban, data=social_media_likes) # conducts an independent samples t-test to see if likes differ by urban/rural status
 ## save the output of the t.test for later reference
@@ -110,7 +110,7 @@ t.test(???~urban, data=social_media_likes) # conducts an independent samples t-t
 # save it for later, if you like!
 
 ###############################################################################
-## Activity - Visualising group differences
+## Activity - Visualising group differences (Section 4.9)
 
 ## here is the code for a grouped boxplot of likes by urban/rural status
 social_media_likes %>% 

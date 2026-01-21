@@ -13,11 +13,11 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 if(!require(here)) install.packages('here') #checks if a package is installed and installs it if required.
 if(!require(tidyverse)) install.packages('tidyverse')
 
-## Activity - load packages using
+## Activity - Load packages (Section 3.1)
 # the library() function. 
 
 ###############################################################################
-## Activity - Hypotheses
+## Activity - Defining our hypotheses (Section 3.2)
 ## add your answer to the below questions, as comments (i.e. preceded by a #)
 # 1. Should there be a difference in the number of likes between the mood conditions?
 # 
@@ -29,7 +29,7 @@ if(!require(tidyverse)) install.packages('tidyverse')
 #
 
 ###############################################################################
-## Activity - Loading in the data
+## Activity - Loading in the data (Section 3.3)
 
 # Now Amend the code below to read in your fresh data
 social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv"))
@@ -39,7 +39,7 @@ social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv
 
 
 ###############################################################################
-## Activity - Get back on the pipes
+## Activity - Get back on the pipes (Section 3.4)
 
 ## run this code so you can see what it does
 social_media %>% 
@@ -58,7 +58,7 @@ social_media %>%
 
 
 ###############################################################################
-## Activity - start plotting
+## Activity - start plotting (Section 3.5)
 ## Plotting the data real pretty
 social_media_likes %>% 
   ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
@@ -67,14 +67,15 @@ social_media_likes %>%
 # bonus activity - can you use the export button in the plots pane to save the figure to 
 # the Output folder?
 
-## Activity - provide your answers in comment form below
+## Activity - So you've visualised your data, now what? (Section 3.6)
+## provide your answers in comment form below
 ## 1. Are the distributions of likes in each mood roughly normal?  
 ##
 ## 2. Are there any obvious outliers that might affect the results of our statistical test? 
 ##
 
 ###############################################################################
-## Activity - get descriptive!
+## Activity - get descriptive! (Section 3.7)
 ## Get descriptive statistics
 
 social_media_likes %>% 
@@ -84,7 +85,7 @@ social_media_likes %>%
 
 
 ###############################################################################
-## Activity - conducting a paired t-test
+## Activity - Conducting a paired t-test (Section 3.8)
 # Conducting a paired samples t-test
 
 social_media$
