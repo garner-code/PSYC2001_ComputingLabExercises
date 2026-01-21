@@ -3,7 +3,7 @@
     "path": "~/Documents/teaching/PSYC2001_ComputingLabsExercises/4_Testing-between-groups/testing-between-groups.R",
     "project_path": "testing-between-groups.R",
     "type": "r_source",
-    "hash": "2531615242",
+    "hash": "3984755002",
     "contents": "",
     "dirty": false,
     "created": 1761089918338.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "108,16",
-        "scrollLine": "90"
+        "cursorPosition": "66,74",
+        "scrollLine": "45"
     },
     "folds": "",
-    "lastKnownWriteTime": 1768172707,
+    "lastKnownWriteTime": 1768973298,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1768172707844,
+    "last_content_update": 1768973298650,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -64,7 +64,7 @@ str()
 
 ## now run the below code to turn urban from an integer to a factor
 social_media_likes <- social_media_likes %>% 
-  mutate(urban = factor(urban, levels=c('urban', 'rural'))) #changes the urban variable to a factor with levels urban and rural
+  mutate(urban = factor(urban, levels=c(1,2), labels=c('urban', 'rural'))) #changes the urban variable to a factor with levels urban and rural
 
 #############################################################################
 ## Activity - Adapting our previous code to make new histograms
