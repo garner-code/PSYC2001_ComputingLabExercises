@@ -7,7 +7,7 @@
 # K. Garner, 2025
 ###############################################################################
 
-# Activity - Getting to know scripts
+# Activity - Getting to know scripts (Section 1.4.1)
 # Type 2 + 2 below and run it so you can see the output in the console
 2 + 2
 
@@ -15,11 +15,11 @@
 mean(x=c(5, 4, 3))
 
 
-# see Activity: Create some objects
+# Activity: Create some objects (Section 1.8.1)
 # copy and paste the code to make some objects here 
 
 
-# see Activity: Explore Datatypes
+# Activity: Explore Datatypes (Section 1.9.1)
 # run these lines of code to check the answers match
 # the book chapter
 typeof(age)
