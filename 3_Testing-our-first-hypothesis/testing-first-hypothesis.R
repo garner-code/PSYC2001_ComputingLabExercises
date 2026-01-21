@@ -13,8 +13,8 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 if(!require(here)) install.packages('here') #checks if a package is installed and installs it if required.
 if(!require(tidyverse)) install.packages('tidyverse')
 
-## Activity - Load packages (Section 3.1)
-# the library() function. 
+## Activity - Load packages (Section 3.1.1)
+# using the library() function. 
 
 ###############################################################################
 ## Activity - Defining our hypotheses (Section 3.2)
@@ -29,7 +29,7 @@ if(!require(tidyverse)) install.packages('tidyverse')
 #
 
 ###############################################################################
-## Activity - Loading in the data (Section 3.3)
+## Activity - Loading in the data (Section 3.3.1)
 
 # Now Amend the code below to read in your fresh data
 social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv"))

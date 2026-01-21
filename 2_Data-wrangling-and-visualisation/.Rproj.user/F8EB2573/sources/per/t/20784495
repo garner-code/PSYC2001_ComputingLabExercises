@@ -1,9 +1,9 @@
 {
     "id": "20784495",
-    "path": "~/Documents/teaching/UNSW-PSYC2001/PSYC2001_ComputingTutorials/2_Data-wrangling-and-visualisation/data_wrangling_and_visualisation.R",
+    "path": "~/Documents/teaching/PSYC2001_ComputingLabsExercises/2_Data-wrangling-and-visualisation/data_wrangling_and_visualisation.R",
     "project_path": "data_wrangling_and_visualisation.R",
     "type": "r_source",
-    "hash": "1010156971",
+    "hash": "3112943479",
     "contents": "",
     "dirty": false,
     "created": 1760672721398.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "57,81",
-        "scrollLine": "47"
+        "cursorPosition": "61,2",
+        "scrollLine": "48"
     },
     "folds": "",
-    "lastKnownWriteTime": 1760677448,
+    "lastKnownWriteTime": 1769036620,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1760677448867,
+    "last_content_update": 1769036620855,
     "read_only": false,
     "read_only_alternatives": []
 }

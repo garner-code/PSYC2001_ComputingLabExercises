@@ -11,8 +11,8 @@
 # Type 2 + 2 below and run it so you can see the output in the console
 2 + 2
 
-# run the below line of code to see what answer you get
-mean(x=c(5, 4, 3))
+# run the below line of code to see what answer you get (Section 1.5.1)
+mean(x=c(5, 4, 3)) 
 
 
 # Activity: Create some objects (Section 1.8.1)

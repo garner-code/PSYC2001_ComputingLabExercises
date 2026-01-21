@@ -21,11 +21,13 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 ## Activity - Find out about packages (Section 2.3.1)
 ?here
 
+###############################################################################
 ## Activity - Import the data (Section 2.5.1)
 ## Now finish and run the code that will import the social media data for 
 # you and store it to an object called social_media
 social_media <- 
 
+###############################################################################
 ## Activity - View the data (Section 2.6.1)
 ## Now look at the data programmatically. Complete the following methods
 # to view the data. Also update the comments with missing information.
@@ -47,6 +49,7 @@ str()
 summary()
 
 
+###############################################################################
 ## Activity - find and replace -999 values (Section 2.8.1)
 ## Complete the below code to find out how many cases of -999 there are in the 
 # time_on_social variable
@@ -55,6 +58,7 @@ View() #view the filtered dataframe
 
 count(social_media_filtered) #count the number of rows in the filtered dataframe
 
+###############################################################################
 ## Activity - pipe with pipes (Section 2.9.1)
 ## follow the piping activities to get the same results as you see in the chapter
 
