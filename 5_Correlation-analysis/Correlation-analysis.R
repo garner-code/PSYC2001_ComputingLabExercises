@@ -57,14 +57,14 @@ social_media_attitude <- social_media %>%
 
 
 ###############################################################################
-## Activity - save the results of your hard work
+## Activity - save the results of your hard work (Section 5.4)
 
 # amend the following code so that you save your new data frame to a file called 
 # "PSYC2001-social-media-attitude.csv" in the "Data" folder.
 write.csv(social_media_NA, here("Output","PSYC2001_social-media-data-cleaned.csv")) #creates a csv file from the dataframe social_media_NA
 
 ###############################################################################
-## Activity - looking for straight lines
+## Activity - looking for straight lines (Section 5.5)
 
 # run the below code to create a scatterplot of time_on_social against 
 # polit_attitude.
@@ -81,13 +81,13 @@ social_media_attitude %>%
 # polit_attitude.
 
 ###############################################################################
-## Activity - correlation using the formula method (Section 5.4)
+## Activity - correlation using the formula method (Section 5.6.1)
 
 # run this line of code and interpret the output
 cor.test(formula = ~ time_on_social + attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
 #use = "complete.obs" removes all NA values from the correlation. 
 
-# complete this line of code and check it gives you the same as above (Section 5.5)
+# complete this line of code and check it gives you the same as above (Section 5.6.2)
 cor.test(x = social_media_attitude$..., 
          y = social_media_attitude$..., use = "complete.obs")
 
