@@ -9,11 +9,11 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()`
+## Activity - load the packages here and tidyverse using the `library()` (Section 5.1)
 ## function
 
 ###############################################################################
-## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame 
+## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame (Section 5.2)
 ## called social_media
 
 ## Check the data frame has loaded properly using your preferred method
@@ -23,7 +23,7 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # social media use here, as a comment in your code.
 
 ###############################################################################
-## Activity - get some political attitude
+## Activity - get some political attitude (Section 5.3)
 
 ## Write the 3 values you get when multiplying the first 3 observations in 
 # `polit_informed` each by 0.25, as a comment. We have started the first comment
@@ -81,13 +81,13 @@ social_media_attitude %>%
 # polit_attitude.
 
 ###############################################################################
-## Activity - correlation using the formula method
+## Activity - correlation using the formula method (Section 5.4)
 
 # run this line of code and interpret the output
 cor.test(formula = ~ time_on_social + attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
 #use = "complete.obs" removes all NA values from the correlation. 
 
-# complete this line of code and check it gives you the same as above
+# complete this line of code and check it gives you the same as above (Section 5.5)
 cor.test(x = social_media_attitude$..., 
          y = social_media_attitude$..., use = "complete.obs")
 

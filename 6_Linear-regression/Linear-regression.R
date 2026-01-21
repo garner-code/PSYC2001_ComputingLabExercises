@@ -9,17 +9,17 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()`
+## Activity - load the packages here and tidyverse using the `library()` (Section 6.1)
 ## function
 
 
 ###############################################################################
-## Activity - to what extent will political attitudes predict time spent on social
+## Activity - to what extent will political attitudes predict time spent on social (Section 6.1)
 ## media? Write your hypothesis here as a comment in your code.
 
 
 ###############################################################################
-## Activity - copy and paste code from a previous week that will load a data set.
+## Activity - copy and paste code from a previous week that will load a data set. (Section 6.2)
 ## amend it to load the "PSYC2001_social-media-attitude.csv" file that is in the 
 ## folder "Data"
 
@@ -27,7 +27,7 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 head(social_media_attitude)
 
 ###############################################################################
-## Activity - run the following line of code to see what it does to the social 
+## Activity - run the following line of code to see what it does to the social (Section 6.3)
 ## media data frame
 
 social_media_attitude %>%
@@ -58,14 +58,14 @@ social_media_likes %>%
 # + facet_wrap(~measure)
 
 ###############################################################################
-## Activity - arguments for lm()
+## Activity - arguments for lm() (Section 6.4)
 ## complete the following comments
 
 # the first two arguments for lm() are...
 # the formula I need to use is ... 
 
 ###############################################################################
-## Activity - running the regression
+## Activity - running the regression (Section 6.4)
 ## complete the following line of code and run it
 mod<-lm(formula = ... ~ ..., data = ... )
 
@@ -75,7 +75,7 @@ mod
 ## write the resulting regression equation as a comment below
 
 
-## run the following line of code
+## run the following line of code (Section 6.5)
 summary(mod)
 ## write the R-squared value as a comment below
 
@@ -88,7 +88,7 @@ summary(mod)
 
 
 ###############################################################################
-## Activity - plot the line of best fit
+## Activity - plot the line of best fit (Section 6.6)
 ## Run the following line of code and finish the comment next to geom_point(...)
 
 social_media_attitude %>% 
