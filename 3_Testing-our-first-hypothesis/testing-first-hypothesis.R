@@ -13,11 +13,11 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 if(!require(here)) install.packages('here') #checks if a package is installed and installs it if required.
 if(!require(tidyverse)) install.packages('tidyverse')
 
-## Activity - Load packages (Section 3.1)
+## Activity - Load packages (Checking installation and loading packages)
 # the library() function. 
 
 ###############################################################################
-## Activity - Defining our hypotheses (Section 3.2)
+## Activity - Defining our hypotheses (Developing our hypotheses)
 ## add your answer to the below questions, as comments (i.e. preceded by a #)
 # 1. Should there be a difference in the number of likes between the mood conditions?
 # 
@@ -29,7 +29,7 @@ if(!require(tidyverse)) install.packages('tidyverse')
 #
 
 ###############################################################################
-## Activity - Loading in the data (Section 3.3)
+## Activity - Loading in the data (Loading our data ready for visualisation and analysis)
 
 # Now Amend the code below to read in your fresh data
 social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv"))
@@ -39,7 +39,7 @@ social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv
 
 
 ###############################################################################
-## Activity - Get back on the pipes (Section 3.4)
+## Activity - Get back on the pipes (Visualising is important)
 
 ## run this code so you can see what it does
 social_media %>% 
@@ -58,7 +58,7 @@ social_media %>%
 
 
 ###############################################################################
-## Activity - start plotting (Section 3.5)
+## Activity - start plotting (Visualising is important)
 ## Plotting the data real pretty
 social_media_likes %>% 
   ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
@@ -67,7 +67,7 @@ social_media_likes %>%
 # bonus activity - can you use the export button in the plots pane to save the figure to 
 # the Output folder?
 
-## Activity - So you've visualised your data, now what? (Section 3.6)
+## Activity - So you've visualised your data, now what? (Visualising is important)
 ## provide your answers in comment form below
 ## 1. Are the distributions of likes in each mood roughly normal?  
 ##
@@ -75,7 +75,7 @@ social_media_likes %>%
 ##
 
 ###############################################################################
-## Activity - get descriptive! (Section 3.7)
+## Activity - get descriptive! (Descriptive statistics)
 ## Get descriptive statistics
 
 social_media_likes %>% 
@@ -85,7 +85,7 @@ social_media_likes %>%
 
 
 ###############################################################################
-## Activity - Conducting a paired t-test (Section 3.8)
+## Activity - Conducting a paired t-test (Testing hypothesis using a paired-sample t-test)
 # Conducting a paired samples t-test
 
 social_media$
