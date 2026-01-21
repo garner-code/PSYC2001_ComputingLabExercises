@@ -69,16 +69,16 @@ write.csv(social_media_NA, here("Output","PSYC2001_social-media-data-cleaned.csv
 # run the below code to create a scatterplot of time_on_social against 
 # polit_attitude.
 social_media_attitude %>% 
-  ggplot(aes(y = time_on_social, x = polit_attitude)) +
+  ggplot(aes(x = polit_attitude, y = time_on_social)) +
   geom_point(colour = "orange") +
-  labs(x = "Time on Social", y = "Political Attitude") +
+  labs(x = "Political Attitude", y = "Time on Social") +
   theme_classic() 
 
 # copy and paste the above code here, and then amend it to get a scatter plot for
 # polit_attitude against age
 
 # repeat, and amend to get the scatterplot for time_on_social against 
-# polit_attitude.
+# age.
 
 ###############################################################################
 ## Activity - correlation using the formula method
