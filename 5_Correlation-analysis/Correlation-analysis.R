@@ -9,11 +9,11 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()` (Section 5.1)
+## Activity - load the packages here and tidyverse using the `library()` (Section 5.1.1)
 ## function
 
 ###############################################################################
-## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame (Section 5.2)
+## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame (Section 5.2.1)
 ## called social_media
 
 ## Check the data frame has loaded properly using your preferred method
@@ -23,7 +23,7 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # social media use here, as a comment in your code.
 
 ###############################################################################
-## Activity - get some political attitude (Section 5.3)
+## Activity - get some political attitude (Section 5.3.1)
 
 ## Write the 3 values you get when multiplying the first 3 observations in 
 # `polit_informed` each by 0.25, as a comment. We have started the first comment
