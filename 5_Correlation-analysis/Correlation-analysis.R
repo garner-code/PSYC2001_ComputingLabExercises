@@ -9,18 +9,18 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()` (Section 5.1.1)
+## Activity - load the packages `here` and `tidyverse` using the `library()` (Section 5.1.1)
 ## function
 
 ###############################################################################
-## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame (Section 5.2.1)
-## called social_media
+## Activity - load 'PSYC2001_social-media-data-cleaned.csv' into a data frame 
+## called social_media (Section 5.2.1)
 
 ## Check the data frame has loaded properly using your preferred method
 
 
-## Write your hypothesis about the relationship between political attutude and 
-# social media use here, as a comment in your code.
+## Write your hypothesis about the relationship between political attitude and 
+# social media use here, as a comment in your code. (Section 5.2.2)
 
 ###############################################################################
 ## Activity - get some political attitude (Section 5.3.1)
@@ -31,13 +31,15 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # Row 1:
 
 
-# Follow the instructions to amend the below code to create a polit_attitude 
-# variable. 
+# Amend the below code in your script, so that you save the data frame to an 
+# object called `social_media_test`
 social_media_likes <- social_media %>% 
-  mutate(likes =(bad_mood_likes + good_mood_likes)/2 ) # creates a new variable called likes which is the average of bad_mood_likes and good_mood_likes
+  mutate(likes =(bad_mood_likes + good_mood_likes)/2 ) 
+# you will also amend the code above to create a variable called `test` (see 
+# Section 5.3.1)
 
 # Run the code and then run the following line of code to check that it works.
-head(social_media_test)
+View(social_media_test)
 
 # once you have tested adding `+ 0.35 * polit_campaign` to your code, and you 
 # are happy with the results, you can remove the `social_media_test` data frame from 
@@ -57,22 +59,21 @@ social_media_attitude <- social_media %>%
 
 
 ###############################################################################
-## Activity - save the results of your hard work (Section 5.4)
+## Activity - save the results of your hard work (Section 5.3.2)
 
 # amend the following code so that you save your new data frame to a file called 
 # "PSYC2001-social-media-attitude.csv" in the "Data" folder.
 write.csv(social_media_NA, here("Output","PSYC2001_social-media-data-cleaned.csv")) #creates a csv file from the dataframe social_media_NA
 
 ###############################################################################
-## Activity - looking for straight lines (Section 5.5)
+## Activity - looking for straight lines (Section 5.3.3)
 
-# run the below code to create a scatterplot of time_on_social against 
-# polit_attitude.
+# run the below code to create a scatterplot of polit_attitude and time_on_social
 social_media_attitude %>% 
-  ggplot(aes(x = polit_attitude, y = time_on_social)) +
-  geom_point(colour = "orange") +
-  labs(x = "Political Attitude", y = "Time on Social") +
-  theme_classic() 
+  ggplot(aes(x = polit_attitude, y = time_on_social)) + # set up the canvas
+  geom_point(colour = "orange") + # make a scatterplot
+  labs(x = "Political Attitude", y = "Time on Social") +  # define labels
+  theme_classic() # make pretty
 
 # copy and paste the above code here, and then amend it to get a scatter plot for
 # polit_attitude against age
@@ -81,17 +82,32 @@ social_media_attitude %>%
 # age.
 
 ###############################################################################
-## Activity - correlation using the formula method (Section 5.6.1)
+## Activity - calculate the correlation co-efficient (Section 5.4.1)
 
+# run this line of code
+social_media_attitude %>% 
+  summarise(r = cor(time_on_social, polit_attitude, use = "complete.obs")) #use = "complete.obs" removes all NA values from the correlation.
+
+
+###############################################################################
+## Activity - statistical test of Ho for the correlation co-efficient (Section 5.5.1)
 # run this line of code and interpret the output
-cor.test(formula = ~ time_on_social + attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
+cor.test(formula = ~ time_on_social + polit_attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
 #use = "complete.obs" removes all NA values from the correlation. 
 
-# complete this line of code and check it gives you the same as above (Section 5.6.2)
+# complete this line of code and check it gives you the same as above (Section 5.5.2)
 cor.test(x = social_media_attitude$..., 
          y = social_media_attitude$..., use = "complete.obs")
 
+## add your answers to the following questions as comments:
+#  What is the relationship between time_on_social and attitude?
+# Can you reject the null hypothesis?
+# Was your hypothesis supported? 
+# What does the ‘df’ value tell you about the sample size? 
+# Why is it that number?
+
+###############################################################################
 # copy and paste your preferred cor.test() method here, and run the correlation analysis
 # to assess the relationship between the second pair of variables that appeared to share
-# a linear relationship.
+# a linear relationship. (Section 5.6.1)
 

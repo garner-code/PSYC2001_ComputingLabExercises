@@ -13,16 +13,12 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 if(!require(here)) install.packages('here') #checks if a package is installed and installs it if required.
 if(!require(tidyverse)) install.packages('tidyverse')
 
-<<<<<<< HEAD
 ## Activity - Load packages (Section 3.1.1)
 # using the library() function. 
-=======
-## Activity - Load packages (Checking installation and loading packages)
-# the library() function. 
->>>>>>> 91384dbb606f14c64e14a8a9d73fed4089b24fde
+
 
 ###############################################################################
-## Activity - Defining our hypotheses (Developing our hypotheses)
+## Activity - Defining our hypotheses (Developing our hypotheses) (Section 3.2.1)
 ## add your answer to the below questions, as comments (i.e. preceded by a #)
 # 1. Should there be a difference in the number of likes between the mood conditions?
 # 
@@ -45,7 +41,7 @@ social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv
 
 
 ###############################################################################
-## Activity - Get back on the pipes (Visualising is important)
+## Activity - Get back on the pipes (Section 3.4.1)
 
 ## run this code so you can see what it does
 social_media %>% 
@@ -64,7 +60,7 @@ social_media %>%
 
 
 ###############################################################################
-## Activity - start plotting (Visualising is important)
+## Activity - start plotting (Section 3.4.2)
 ## Plotting the data real pretty
 social_media_likes %>% 
   ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
@@ -73,7 +69,7 @@ social_media_likes %>%
 # bonus activity - can you use the export button in the plots pane to save the figure to 
 # the Output folder?
 
-## Activity - So you've visualised your data, now what? (Visualising is important)
+## Activity - So you've visualised your data, now what? (Section 3.4.3
 ## provide your answers in comment form below
 ## 1. Are the distributions of likes in each mood roughly normal?  
 ##
@@ -81,7 +77,7 @@ social_media_likes %>%
 ##
 
 ###############################################################################
-## Activity - get descriptive! (Descriptive statistics)
+## Activity - get descriptive! (Section 3.5.1)
 ## Get descriptive statistics
 
 social_media_likes %>% 
@@ -91,7 +87,7 @@ social_media_likes %>%
 
 
 ###############################################################################
-## Activity - Conducting a paired t-test (Testing hypothesis using a paired-sample t-test)
+## Activity - Conducting a paired t-test (Section 3.7.1)
 # Conducting a paired samples t-test
 
 social_media$

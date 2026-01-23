@@ -61,15 +61,15 @@ social_media_likes %>%
 ## Activity - arguments for lm() (Section 6.4.1)
 ## complete the following comments
 
-# the first two arguments for lm() are...
-# the formula I need to use is ... 
+# 1. the first two arguments for lm() are...
 
-###############################################################################
-## Activity - running the regression (Section 6.4.1)
+# 2. the formula I need to use is ... 
+
 ## complete the following line of code and run it
 mod<-lm(formula = ... ~ ..., data = ... )
 
-## run this line of code once you have fit the model
+## Run the following line of code in your script to see what was saved to the 
+## object `mod` by the `lm()` function.
 mod
 
 ## write the resulting regression equation as a comment below
@@ -95,5 +95,5 @@ social_media_attitude %>%
   ggplot(aes(x = polit_attitude, y = time_on_social)) + # set up the canvas
   geom_point(colour = "orange") + # make a scatterplot
   geom_smooth(method = "lm", se = TRUE) + # add line of best fit ...
-  labs(x = "Political Attitude", y = "Time on Social") + # define labels
+  labs(x = "Political Attitude", y = "Time on Social") + # define axis labels
   theme_classic() # make pretty
