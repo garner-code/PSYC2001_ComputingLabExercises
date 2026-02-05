@@ -40,9 +40,9 @@ head(social_media, 10)
 ## calculate what values you should get for the first three rows of the dataframe, 
 ## when you average bad_mood_likes and good_mood_likes. Write the answers here
 ## as comments. We have started the first comment for you.
-# Row 1: (31 + 59)/2 = 45
-# Row 2: (29 + 49)/2 = 39
-# Row 3: (24 + 36)/2 = 30
+# Row 1: (22.8 + 46.5)/2 = 34.65
+# Row 2: (46 + 48.3)/2 = 47.15
+# Row 3: (50.8 + 46.1)/2 = 48.45
 
 
 ## run this to create the `likes` variable and see the output

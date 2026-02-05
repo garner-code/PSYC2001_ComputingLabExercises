@@ -34,9 +34,9 @@ head(social_media)
 ## Write the 3 values you get when multiplying the first 3 observations in 
 # `polit_informed` each by 0.25, as a comment. We have started the first comment
 # for you.
-# Row 1: 1.75
-# Row 2: 1.5
-# Row 3: 1.25
+# Row 1: 2.3 * 0.25 = 0.575
+# Row 2: 1.6 * 0.25 = 0.4
+# Row 3: 1.9 * 0.25 = 0.475
 
 
 # Amend the below code in your script, so that you save the data frame to an 
@@ -75,7 +75,7 @@ head(social_media_attitude)
 ## Activity - save the results of your hard work (Section 5.3.2)
 
 # amend the following code so that you save your new data frame to a file called 
-# "PSYC2001-social-media-attitude.csv" in the "Data" folder.
+# "PSYC2001_social-media-attitude.csv" in the "Data" folder.
 write.csv(social_media_attitude, here("Data","PSYC2001_social-media-attitude.csv")) #creates a csv file from the dataframe social_media_attitude
 
 ###############################################################################
