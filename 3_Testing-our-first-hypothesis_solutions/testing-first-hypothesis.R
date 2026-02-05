@@ -15,6 +15,8 @@ if(!require(tidyverse)) install.packages('tidyverse')
 
 ## Activity - Load packages (Section 3.1.1)
 # using the library() function. 
+library(here) #loads in the specified package
+library(tidyverse) 
 
 
 ###############################################################################
@@ -34,10 +36,11 @@ if(!require(tidyverse)) install.packages('tidyverse')
 
 
 # Now Amend the code below to read in your fresh data
-social_media <- read.csv(file = here(???,"PSYC2001_social-media-data-cleaned.csv"))
+social_media <- read.csv(file = here("Data","PSYC2001_social-media-data-cleaned.csv"))
 
 # now use the summary function to check your data, especially to make sure the pesky
 # -999 values are gone!
+summary(social_media)
 
 
 ###############################################################################
@@ -54,9 +57,12 @@ social_media %>%
 
 ## now, very important! amend the code above so that the new dataframe is saved to an object called
 # social_media_likes. Then run the code to create the new dataframe.
+social_media_likes <- social_media %>% 
+  select("id","good_mood_likes","bad_mood_likes") %>% # choose columns we want keep in our dataframe
+  pivot_longer(cols = ends_with("likes"), names_to = "mood", values_to = "likes")
 
 # check the new dataframe using the head function. Remember to make your code match what's in the book!
-(social_media_likes)
+head(social_media_likes)
 
 
 ###############################################################################
@@ -90,10 +96,11 @@ social_media_likes %>%
 ## Activity - Conducting a paired t-test (Section 3.7.1)
 # Conducting a paired samples t-test
 
-social_media$
+social_media$good_mood_likes
 
-t.test(x=social_media$, 
-       y=social_media$,)
+t.test(x=social_media$good_mood_likes, 
+       y=social_media$bad_mood_likes,
+       paired = TRUE)
 
 
 ## Write your interpretation of the output as a comment below.
