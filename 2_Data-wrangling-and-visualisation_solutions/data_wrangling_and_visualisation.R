@@ -2,7 +2,7 @@
 # Data wrangling and visualisation lab.
 # This script will get you started on handling data and creating visualizations
 # in R and RStudio.
-# To complete the exercises in this script, follow Chapter 2 Data wranglilng and 
+# To complete the exercises in this script, follow Chapter 2 Data wrangling and 
 # visualisation - 
 # https://garner-code.github.io/PSYC2001_ComputingLabBook/data-wrangling-and-visualisation.html
 # K. Garner, 2025
