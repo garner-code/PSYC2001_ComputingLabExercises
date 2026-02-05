@@ -14,7 +14,8 @@ if(!require(here)) install.packages('here') #checks if a package is installed an
 if(!require(tidyverse)) install.packages('tidyverse')
 
 ## Activity - load packages using `library()` (Section 4.1.1)
-
+library(here) #loads in the specified package
+library(tidyverse)
 
 ###############################################################################
 ## Activity - Formulate your research question (Section 4.2.1)
@@ -25,12 +26,12 @@ if(!require(tidyverse)) install.packages('tidyverse')
 
 ###############################################################################
 ## Activity - Load in data and check it (Section 4.2.2)
-
+social_media <- read.csv(file = here("Data","PSYC2001_social-media-data-cleaned.csv")) #reads in CSV files
 
 
 ## check the data has loaded in correctly by using the head() function to view as many rows as you 
 ## would like
-head(social_media, ??)
+head(social_media, 10)
 
 
 ###############################################################################
@@ -39,9 +40,10 @@ head(social_media, ??)
 ## calculate what values you should get for the first three rows of the dataframe, 
 ## when you average bad_mood_likes and good_mood_likes. Write the answers here
 ## as comments. We have started the first comment for you.
-# Row 1:
-# 
-# 
+# Row 1: (31 + 59)/2 = 45
+# Row 2: (29 + 49)/2 = 39
+# Row 3: (24 + 36)/2 = 30
+
 
 ## run this to create the `likes` variable and see the output
 social_media %>% 
@@ -49,18 +51,20 @@ social_media %>%
 
 ## amend the code above to select only id, urban, like, and followers, and save 
 ## to a data frame object called social_media_likes
-
+social_media_likes <- social_media %>% 
+  mutate(likes =(bad_mood_likes + good_mood_likes)/2 ) %>% # creates a new variable called likes which is the average of bad_mood_likes and good_mood_likes
+  select(id, urban, likes, followers) # selects only the specified columns from the data frame
 
 ## complete this line of code to check you kept the variables you want
 ## use it to see as many lines as you want to see
-head()
+head(social_media_likes, 10)
 
 ###############################################################################
 ## Activity - Defining factors (Section 4.3.2)
 
 # complete the below line of code and run it to get info about the 
 # social_media_likes data frame
-str()
+str(social_media_likes) #provides a summary of the data structure.
 
 ## now run the below code to turn urban from an integer to a factor
 social_media_likes <- social_media_likes %>% 
@@ -70,27 +74,31 @@ social_media_likes <- social_media_likes %>%
 ## Activity - Adapting our previous code to make new histograms (Section 4.4.1)
 
 # change this code so that it creates a histogram of the likes variable
-social_media_NA %>%
-  ggplot(aes(x = time_on_social)) + #ggplot uses aesthetic (aes()) to map axes. 
+social_media_likes %>%
+  ggplot(aes(x = likes)) + #ggplot uses aesthetic (aes()) to map axes. 
   geom_histogram(binwidth=10, col="black", fill="seagreen") + #creates a histogram
-  labs(x = "Time on social media", y = "Density") + #short for "labels", use to label axes and titles.
+  labs(x = "Rate of Likes", y = "Density") + #short for "labels", use to label axes and titles.
   theme_classic() #changes the theme of the plot to a classic theme. makes it prettier!
 
 ## copy and paste your new code here, and change it so that you get a histogram
 ## of the followers variable instead.
-
+social_media_likes %>%
+  ggplot(aes(x = followers)) + #ggplot uses aesthetic (aes()) to map axes. 
+  geom_histogram(binwidth=10, col="black", fill="seagreen") + #creates a histogram
+  labs(x = "Average Number of Followers", y = "Density") + #short for "labels", use to label axes and titles.
+  theme_classic() #changes the theme of the plot to a classic theme. makes it prettier!
 
 
 ###############################################################################
 ## Activity - Adapt the code to get the mean and standard deviations for likes and followers 
 ## (Section 4.5.1)
 social_media_descriptives <- social_media_likes %>% # save to new object called social_media_descriptives
-  group_by(???) %>% # group the data by urban
+  group_by(urban) %>% # group the data by urban
   summarise(
     mean_followers = mean(followers), # calculate the mean number of followers for urban and rural groups separately
     mean_likes = mean(likes), # same for likes
-    sd_followers = sd(???),  # calculate the sd of followers
-    sd_likes = sd(???) # calculate the sd of likes
+    sd_followers = sd(followers),  # calculate the sd of followers
+    sd_likes = sd(likes) # calculate the sd of likes
   )
 
 social_media_descriptives # view the new dataframe object
@@ -106,8 +114,9 @@ likes_t # view the output
 ## Interpret the output as a comment below.
 
 ## now complete the code below for the followers variable
-t.test(???~urban, data=social_media_likes) # conducts an independent samples t-test to see if followers differ by urban/rural status
+t.test(followers~urban, data=social_media_likes) # conducts an independent samples t-test to see if followers differ by urban/rural status
 # save it for later, if you like!
+followers_t <- t.test(followers~urban, data=social_media_likes)
 
 ###############################################################################
 ## Activity - Visualising group differences (Section 4.7.1)
@@ -122,6 +131,28 @@ social_media_likes %>%
   theme_classic() 
 
 # copy and paste it here, and amend it to create a boxplot of followers by urban/rural status
+social_media_likes %>% 
+  ggplot(aes(y = followers, fill = urban, x = urban)) + 
+  geom_boxplot() + 
+  labs(x = "Living Area", y = "Average Number of Followers") + 
+  scale_fill_manual(values = c(rural = "magenta4", urban = "aquamarine4")) + 
+  theme_classic() 
 
 # now copy and paste the code to save the plot, and amend it for the followers boxplot
+likes_bp <- social_media_likes %>% 
+  ggplot(aes(y = likes, fill = urban, x = urban)) + 
+  geom_boxplot() + 
+  labs(x = "Living Area", y = "Average Rate of Likes") + 
+  scale_fill_manual(values = c(rural = "plum", urban = "cyan2")) + 
+  theme_classic() 
 
+ggsave(here("Output", "likes_boxplot.png"), plot = likes_bp) # saves the likes boxplot to the Output folder as a PNG file
+
+followers_bp <- social_media_likes %>% 
+  ggplot(aes(y = followers, fill = urban, x = urban)) + 
+  geom_boxplot() + 
+  labs(x = "Living Area", y = "Average Number of Followers") + 
+  scale_fill_manual(values = c(rural = "magenta4", urban = "aquamarine4")) + 
+  theme_classic() 
+
+ggsave(here("Output", "followers_boxplot.png"), plot = followers_bp) # saves the followers boxplot to the Output folder as a PNG file
