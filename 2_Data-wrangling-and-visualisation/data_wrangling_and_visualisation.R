@@ -43,10 +43,8 @@ str()
 
 ###############################################################################
 ## Activity - Summarise the data (Section 2.7.1)
-# Summarise you data using the summary() function. Complete the code
-# and run it. What do you notice about the data?
+# Summarise you data using the summary() function. What do you notice about the data?
 
-summary()
 
 
 ###############################################################################
@@ -68,13 +66,13 @@ count(social_media_filtered) #count the number of rows in the filtered dataframe
 
 
 
-## Now run the summary() function again to get a summary of your new dataframe
+## Now run the summary() function again 
 
 
 ###############################################################################
 ## Activity - save the cleaned data (Section 2.10.1)
 ## Save the data as a csv file using the write_csv() and here() functions.
-write.csv(social_media_NA, here("Output","PSYC2001_social-media-data-cleaned.csv"))
+
 
 ###############################################################################
 ## Activity - Make a blank canvas (Section 2.11.1)

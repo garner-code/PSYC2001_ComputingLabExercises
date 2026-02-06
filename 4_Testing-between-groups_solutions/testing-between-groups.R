@@ -49,7 +49,7 @@ head(social_media, 10)
 social_media %>% 
   mutate(likes =(bad_mood_likes + good_mood_likes)/2 )
 
-## amend the code above to select only id, urban, like, and followers, and save 
+## Update the code above to select only id, urban, like, and followers, and save 
 ## to a data frame object called social_media_likes
 social_media_likes <- social_media %>% 
   mutate(likes =(bad_mood_likes + good_mood_likes)/2 ) %>% # creates a new variable called likes which is the average of bad_mood_likes and good_mood_likes
@@ -111,7 +111,11 @@ t.test(likes~urban, data=social_media_likes) # conducts an independent samples t
 likes_t <- t.test(likes~urban, data=social_media_likes) 
 likes_t # view the output
 
-## Interpret the output as a comment below.
+## Interpret the output as a comment below
+
+## What do the 95% CIs tell you about the mean difference between urban and rural dwellers in terms of likes? 
+## Write a comment here that interprets this.
+
 
 ## now complete the code below for the followers variable
 t.test(followers~urban, data=social_media_likes) # conducts an independent samples t-test to see if followers differ by urban/rural status

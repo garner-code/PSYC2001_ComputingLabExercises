@@ -72,9 +72,21 @@ social_media_likes %>%
   ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
   geom_density() # use the data to draw a density plot 
 
-# bonus activity - can you use the export button in the plots pane to save the figure to 
+## Amend your code so that the density plots are semi-transparent
+social_media_likes %>% 
+  ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
+  geom_density(alpha=0.5) # use the data to draw a density plot 
+
+## Add the theme_classic() function to your code to make the plot look nicer
+social_media_likes %>% 
+  ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics
+  geom_density(alpha=0.5) +
+  theme_classic()
+
+# can you use the export button in the plots pane to save the figure to 
 # the Output folder?
 
+###############################################################################
 ## Activity - So you've visualised your data, now what? (Section 3.4.3
 ## provide your answers in comment form below
 ## 1. Are the distributions of likes in each mood roughly normal?  

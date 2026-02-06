@@ -22,11 +22,7 @@ library(tidyverse)
 social_media <- read.csv(file = here("Data","PSYC2001_social-media-data-cleaned.csv"))
 
 ## Check the data frame has loaded properly using your preferred method
-head(social_media)
-
-
-## Write your hypothesis about the relationship between political attitude and 
-# social media use here, as a comment in your code. (Section 5.2.2)
+head(social_media) # e.g.
 
 ###############################################################################
 ## Activity - get some political attitude (Section 5.3.1)
@@ -34,17 +30,20 @@ head(social_media)
 ## Write the 3 values you get when multiplying the first 3 observations in 
 # `polit_informed` each by 0.25, as a comment. We have started the first comment
 # for you.
-# Row 1: 2.3 * 0.25 = 0.575
-# Row 2: 1.6 * 0.25 = 0.4
-# Row 3: 1.9 * 0.25 = 0.475
+# Row 1: 2.3 * 0.25 = 0.575 + ...
+# Row 2: 1.6 * 0.25 = 0.4 + ...
+# Row 3: 1.9 * 0.25 = 0.475 + ...
 
 
 # Amend the below code in your script, so that you save the data frame to an 
 # object called `social_media_test`
 social_media_test <- social_media %>% 
-  mutate(test = polit_informed * 0.25 + 0.35 * polit_campaign)
+  mutate(test = polit_informed * 0.25)
 # you will also amend the code above to create a variable called `test` (see 
 # Section 5.3.1)
+
+social_media_test <- social_media %>% 
+  mutate(test = polit_informed * 0.25 + polit_campaign * 0.35)
 
 # Run the code and then run the following line of code to check that it works.
 View(social_media_test)
@@ -63,6 +62,9 @@ social_media_attitude <- social_media %>%
 head(social_media_attitude)
 
 
+###############################################################################
+## Activity - save the results of your hard work (Section 5.3.2)
+
 # check the contents again, once you have selected the key columns 
 # (`id`, `time_on_social`, `polit_attitude`, `age`, and `urban`)
 social_media_attitude <- social_media_attitude %>% 
@@ -70,16 +72,17 @@ social_media_attitude <- social_media_attitude %>%
 
 head(social_media_attitude)
 
-
-###############################################################################
-## Activity - save the results of your hard work (Section 5.3.2)
-
 # amend the following code so that you save your new data frame to a file called 
 # "PSYC2001_social-media-attitude.csv" in the "Data" folder.
 write.csv(social_media_attitude, here("Data","PSYC2001_social-media-attitude.csv")) #creates a csv file from the dataframe social_media_attitude
 
 ###############################################################################
-## Activity - looking for straight lines (Section 5.3.3)
+## Activity - noting down your hypothesis (Section 5.4.1)
+# Write your null and alternate hypothesis as a comment here. 
+
+
+###############################################################################
+## Activity - looking for straight lines (Section 5.5.1)
 
 # run the below code to create a scatterplot of polit_attitude and time_on_social
 social_media_attitude %>% 
@@ -105,7 +108,7 @@ social_media_attitude %>%
   theme_classic()
 
 ###############################################################################
-## Activity - calculate the correlation co-efficient (Section 5.4.1)
+## Activity - calculate the correlation co-efficient (Section 5.6.1)
 
 # run this line of code
 social_media_attitude %>% 
@@ -113,7 +116,7 @@ social_media_attitude %>%
 
 
 ###############################################################################
-## Activity - statistical test of Ho for the correlation co-efficient (Section 5.5.1)
+## Activity - statistical test of Ho for the correlation co-efficient (Section 5.7.1)
 # run this line of code and interpret the output
 cor.test(formula = ~ time_on_social + polit_attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
 #use = "complete.obs" removes all NA values from the correlation. 
@@ -132,7 +135,7 @@ cor.test(x = social_media_attitude$time_on_social,
 ###############################################################################
 # copy and paste your preferred cor.test() method here, and run the correlation analysis
 # to assess the relationship between the second pair of variables that appeared to share
-# a linear relationship. (Section 5.6.1)
+# a linear relationship. (Section 5.8.1)
 
 # The second pair with linear relationship is polit_attitude and age
 social_media_attitude %>% 

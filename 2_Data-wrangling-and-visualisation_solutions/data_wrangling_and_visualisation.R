@@ -49,8 +49,7 @@ str(social_media) #displays an overall summary of the object and variable struct
 
 ###############################################################################
 ## Activity - Summarise the data (Section 2.7.1)
-# Summarise you data using the summary() function. Complete the code
-# and run it. What do you notice about the data?
+# Summarise you data using the summary() function. What do you notice about the data?
 
 summary(social_media) #summary provides a quick overview of the data in each variable.
 
@@ -82,7 +81,7 @@ social_media %>% #pass the values from social_media to the filter function
 social_media_NA <- social_media %>%
   mutate(time_on_social = na_if(time_on_social,-999)) #mutate makes a column by altering rows. na_if replaces -999 with NA
 
-## Now run the summary() function again to get a summary of your new dataframe
+## Now run the summary() function again 
 
 summary(social_media_NA)
 

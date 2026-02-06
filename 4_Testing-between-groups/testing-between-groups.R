@@ -47,7 +47,7 @@ head(social_media, ??)
 social_media %>% 
   mutate(likes =(bad_mood_likes + good_mood_likes)/2 )
 
-## amend the code above to select only id, urban, like, and followers, and save 
+## Update the code above to select only id, urban, like, and followers, and save 
 ## to a data frame object called social_media_likes
 
 
@@ -65,6 +65,8 @@ str()
 ## now run the below code to turn urban from an integer to a factor
 social_media_likes <- social_media_likes %>% 
   mutate(urban = factor(urban, levels=c(1,2), labels=c('urban', 'rural'))) #changes the urban variable to a factor with levels urban and rural
+
+## use the str() function again to see what happened!
 
 #############################################################################
 ## Activity - Adapting our previous code to make new histograms (Section 4.4.1)
@@ -104,6 +106,9 @@ likes_t <- t.test(likes~urban, data=social_media_likes)
 likes_t # view the output
 
 ## Interpret the output as a comment below.
+
+## What do the 95% CIs tell you about the mean difference between urban and rural dwellers in terms of likes? 
+## Write a comment here that interprets this.
 
 ## now complete the code below for the followers variable
 t.test(???~urban, data=social_media_likes) # conducts an independent samples t-test to see if followers differ by urban/rural status

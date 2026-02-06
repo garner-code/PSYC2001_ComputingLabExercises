@@ -17,7 +17,7 @@ mean(x=c(5, 4, 3))
 
 # Activity: Create some objects (Section 1.8.1)
 # copy and paste the code to make some objects here 
-name <- "emily"
+name <- "kelly :)"
 age <- 15 + 18 
 today <-Sys.Date()
 new_year <- as.Date("2025-01-01")
@@ -31,6 +31,6 @@ typeof(age)
 typeof(new_year)
 typeof(name)
 
-# Activity: Looking after the environment (Section 1.10)
-# Complete the code to remove the object 'data'
-rm(data)
+age + 10
+
+decade <- age + 10

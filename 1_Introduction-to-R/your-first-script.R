@@ -9,7 +9,7 @@
 
 # Activity - Getting to know scripts (Section 1.4.1)
 # Type 2 + 2 below and run it so you can see the output in the console
-2 + 2
+
 
 # run the below line of code to see what answer you get (Section 1.5.1)
 mean(x=c(5, 4, 3)) 

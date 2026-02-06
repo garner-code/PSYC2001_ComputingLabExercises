@@ -9,7 +9,7 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()` (Section 6.1)
+## Activity - load the packages here and tidyverse using the `library()` (Section 6.1.1)
 ## function
 
 library(here)
@@ -59,9 +59,14 @@ sma_long <- social_media_attitude %>%
 head(sma_long)
 
 ## check the result by running the line of code below so that we can use it with 
-## the object `sma_long` instead of `social_media_likes`. Change the code so 
-## that `x =` takes `value` column instead. Remove the `group` and `fill` 
-## arguments as we don't need them right now.
+## the object `sma_long` instead of `social_media_likes`. 
+
+###############################################################################
+## Amend the below code so that we can use it with the object sma_long instead 
+## of social_media_likes. Change the code so that x = takes the value column 
+## instead. 
+## Remove the group and fill arguments as we don’t have groups in our data right now. 
+## (Section 6.3.2)
 
 ## now adapt the below code
 sma_long %>% 
@@ -74,6 +79,8 @@ sma_long %>%
   ggplot(aes(x = value)) + # set canvas aesthetics 
   geom_density() + # use the data to draw a density plot
   facet_wrap(~measure) # make a separate plot for each measure
+
+## Add your comments about the data here:
 
 ###############################################################################
 ## Activity - arguments for lm() (Section 6.4.1)
@@ -91,35 +98,23 @@ mod <- lm(formula = time_on_social ~ polit_attitude, data = social_media_attitud
 mod
 
 ## write the resulting regression equation as a comment below
-# Regression equation: time_on_social = 0.5489 + 0.8083 * polit_attitude
-# The regression coefficient is positive (0.8083), which means that as political 
-# attitude increases, time spent on social media also increases.
+
 
 ## run the following line of code (Section 6.4.2)
 summary(mod)
 ## write the R-squared value as a comment below
-# R-squared = 0.2628 (or Multiple R-squared = 0.2628)
-# This means that political attitude explains approximately 26.28% of the variance 
-# in time spent on social media.
+# R-squared = 
 
 ## identify the F statistic, degrees of freedom and p-value associated with the 
 ## overall model fit, and write these below.
-# F-statistic: 19.95 on 1 and 56 DF
-# p-value: 3.939e-05 (or p < .001)
-# The model is statistically significant, meaning political attitude significantly 
-# predicts time spent on social media.
 
 ## Write a comment here interpreting the model, including whether your hypothesis 
 # was supported.
-# The hypothesis was supported. Political attitude positively and significantly 
-# predicted time spent on social media (F(1,56) = 19.95, p < .001, R² = 0.26).
-# For every one-unit increase in political attitude score, time spent on social 
-# media increases by approximately 0.81 hours per day. Political attitude accounts 
-# for 26.28% of the variance in social media use, which is a medium to large effect size.
+
 
 ###############################################################################
 ## Activity - plot the line of best fit (Section 6.6.1)
-## Run the following line of code and finish the comment next to geom_point(...)
+# spot the extra line of code
 
 social_media_attitude %>% 
   ggplot(aes(x = polit_attitude, y = time_on_social)) + # set up the canvas
@@ -127,3 +122,13 @@ social_media_attitude %>%
   geom_smooth(method = "lm", se = TRUE) + # add line of best fit with standard error shading
   labs(x = "Political Attitude", y = "Time on Social") + # define axis labels
   theme_classic() # make pretty
+
+social_media_attitude %>% 
+  ggplot(aes(x = polit_attitude, y = time_on_social)) + # set up the canvas
+  geom_point(colour = "orange") + # make a scatterplot
+  geom_smooth(method = "lm", se = TRUE, level=.9) + # add line of best fit with standard error shading
+  labs(x = "Political Attitude", y = "Time on Social") + # define axis labels
+  theme_classic() # make pretty
+
+## after using the ? operator function, complete the comment above about what se does
+# add a comment on what the 'level' argument for geom_smooth() does

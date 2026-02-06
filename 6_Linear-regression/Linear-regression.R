@@ -9,7 +9,7 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 # your script
 
 ###############################################################################
-## Activity - load the packages here and tidyverse using the `library()` (Section 6.1)
+## Activity - load the packages here and tidyverse using the `library()` (Section 6.1.1)
 ## function
 
 
@@ -44,11 +44,16 @@ social_media_attitude %>%
 head(sma_long)
 
 ## check the result by running the line of code below so that we can use it with 
-## the object `sma_long` instead of `social_media_likes`. Change the code so 
-## that `x =` takes `value` column instead. Remove the `group` and `fill` 
-## arguments as we don't need them right now.
+## the object `sma_long` instead of `social_media_likes`. 
 
-## now adapt the below code
+
+###############################################################################
+## Amend the below code so that we can use it with the object sma_long instead 
+## of social_media_likes. Change the code so that x = takes the value column 
+## instead. 
+## Remove the group and fill arguments as we don’t have groups in our data right now. 
+## (Section 6.3.2)
+
 social_media_likes %>% 
   ggplot(aes(x = likes, group = mood, fill = mood)) + # set canvas aesthetics 
   geom_density() # use the data to draw a density plot 
@@ -56,6 +61,8 @@ social_media_likes %>%
 ## add the below piece of code to your existing code for the plot, to generate 
 ## a density plot for each measure
 # + facet_wrap(~measure)
+
+## Add your comments about the data here:
 
 ###############################################################################
 ## Activity - arguments for lm() (Section 6.4.1)
@@ -89,7 +96,7 @@ summary(mod)
 
 ###############################################################################
 ## Activity - plot the line of best fit (Section 6.6.1)
-## Run the following line of code and finish the comment next to geom_point(...)
+# spot the extra line of code
 
 social_media_attitude %>% 
   ggplot(aes(x = polit_attitude, y = time_on_social)) + # set up the canvas
@@ -97,3 +104,6 @@ social_media_attitude %>%
   geom_smooth(method = "lm", se = TRUE) + # add line of best fit ...
   labs(x = "Political Attitude", y = "Time on Social") + # define axis labels
   theme_classic() # make pretty
+
+## after using the ? operator function, complete the comment above about what se does
+# add a comment on what the 'level' argument for geom_smooth() does

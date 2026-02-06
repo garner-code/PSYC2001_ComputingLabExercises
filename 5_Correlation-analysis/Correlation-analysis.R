@@ -19,9 +19,6 @@ rm(list=ls()) # it is good practice to clear your environment at the start of
 ## Check the data frame has loaded properly using your preferred method
 
 
-## Write your hypothesis about the relationship between political attitude and 
-# social media use here, as a comment in your code. (Section 5.2.2)
-
 ###############################################################################
 ## Activity - get some political attitude (Section 5.3.1)
 
@@ -53,20 +50,25 @@ social_media_attitude <- social_media %>%
 
 # check the contents of the new data frame.
 
-
-# check the contents again, once you have selected the key columns 
-# (`id`, `time_on_social`, `polit_attitude`, `age`, and `urban`)
-
-
 ###############################################################################
 ## Activity - save the results of your hard work (Section 5.3.2)
+
+
+# check the contents of your dataframe again, once you have selected the key columns 
+# (`id`, `time_on_social`, `polit_attitude`, `age`, and `urban`)
+
 
 # amend the following code so that you save your new data frame to a file called 
 # "PSYC2001-social-media-attitude.csv" in the "Data" folder.
 write.csv(social_media_NA, here("Output","PSYC2001_social-media-data-cleaned.csv")) #creates a csv file from the dataframe social_media_NA
 
 ###############################################################################
-## Activity - looking for straight lines (Section 5.3.3)
+## Activity - noting down your hypothesis (Section 5.4.1)
+# Write your null and alternate hypothesis as a comment here. 
+
+
+###############################################################################
+## Activity - looking for straight lines (Section 5.5.1)
 
 # run the below code to create a scatterplot of polit_attitude and time_on_social
 social_media_attitude %>% 
@@ -82,7 +84,7 @@ social_media_attitude %>%
 # age.
 
 ###############################################################################
-## Activity - calculate the correlation co-efficient (Section 5.4.1)
+## Activity - calculate the correlation co-efficient (Section 5.6.1)
 
 # run this line of code
 social_media_attitude %>% 
@@ -90,7 +92,7 @@ social_media_attitude %>%
 
 
 ###############################################################################
-## Activity - statistical test of Ho for the correlation co-efficient (Section 5.5.1)
+## Activity - statistical test of Ho for the correlation co-efficient (Section 5.7.1)
 # run this line of code and interpret the output
 cor.test(formula = ~ time_on_social + polit_attitude, data = social_media_attitude, use = "complete.obs") #formula contains both numeric variables on the right hand side.
 #use = "complete.obs" removes all NA values from the correlation. 
@@ -109,5 +111,5 @@ cor.test(x = social_media_attitude$...,
 ###############################################################################
 # copy and paste your preferred cor.test() method here, and run the correlation analysis
 # to assess the relationship between the second pair of variables that appeared to share
-# a linear relationship. (Section 5.6.1)
+# a linear relationship. (Section 5.8.1)
 
