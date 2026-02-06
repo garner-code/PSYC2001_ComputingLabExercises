@@ -52,7 +52,7 @@ str(social_media) #displays an overall summary of the object and variable struct
 # Summarise you data using the summary() function. What do you notice about the data?
 
 summary(social_media) #summary provides a quick overview of the data in each variable.
-
+# note, other options are available (e.g. quantile())
 
 ###############################################################################
 ## Activity - find and replace -999 values (Section 2.8.1)

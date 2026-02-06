@@ -132,3 +132,5 @@ social_media_attitude %>%
 
 ## after using the ? operator function, complete the comment above about what se does
 # add a comment on what the 'level' argument for geom_smooth() does
+# level argument specifies the confidence level for the confidence interval 
+# around the line of best fit.
